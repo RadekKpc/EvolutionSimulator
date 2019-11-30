@@ -18,15 +18,14 @@ public class Genes {
     }
 
     public Genes(Genes g){
-        this.numOfGenes = g.getNumOfGenes();
-        this.size = g.getSize();
-        this.genes = new int[size];
-        this.genes = Arrays.copyOf(g.getGenes(), size);
+        this(g.getNumOfGenes(),g.getSize());
+        genes = Arrays.copyOf(g.getGenes(), size);
     }
     public Genes(Genes g1,Genes g2){
-        this.numOfGenes = g1.getNumOfGenes();
-        this.size = g1.getSize();
+        this(g1.getNumOfGenes(),g1.getSize());
 
+        if(g1.getSize() != g2.getSize())throw new IllegalArgumentException("Gens have different sizes");
+        if(g1.getNumOfGenes() != g2.getNumOfGenes())throw new IllegalArgumentException("Gens have different range of values");
 
         //random places to div DNA
         int firstPlaceToDiv = (int) (Math.random() * (size-1));

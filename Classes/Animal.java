@@ -5,12 +5,14 @@ import agh.cs.po.Interfaces.IWorldMap;
 import agh.cs.po.Interfaces.IMapElement;
 import agh.cs.po.Interfaces.IPositionChangeObserver;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Animal implements IMapElement{
     public MapDirection direction;
     public IWorldMap map;
     public int energy;
+    public int startEnergy;
     public ArrayList<IPositionChangeObserver> observerlist = new ArrayList<>();
     public Genes genes;
     protected Vector2d position;
@@ -35,6 +37,7 @@ public class Animal implements IMapElement{
     public Animal(IWorldMap map, Vector2d initialPosition,int energy){
         this(map,initialPosition);
         this.energy = energy;
+        this.startEnergy = energy;
     }
 
     //ENERGY
@@ -125,14 +128,30 @@ public class Animal implements IMapElement{
     public Animal copulation(Animal mother){
 
         int childEnergy = (int) (0.25*mother.energy) + (int) (this.energy*0.25);
-        mother.changeEnergy((int) (0.25*mother.energy));
-        this.energy =(int) (this.energy*0.25);
+        mother.changeEnergy((int) -(0.25*mother.energy));
+        this.changeEnergy((int) -(this.energy*0.25));
 
-        Animal child = new Animal(map,new Vector2d(1,1),childEnergy);
+        Animal child = new Animal(map,mother.getPosition(),childEnergy);
         child.genes = new Genes(this.genes,mother.genes);
 
         return child;
      }
+    @Override
+    public Color toColor(){
+        if(energy == 0) return new Color(222, 221, 224);
+        if(energy < 0.2*startEnergy ) return new Color(224, 179, 173);
+        if(energy < 0.4*startEnergy ) return new Color(224, 142, 127);
+        if(energy < 0.6*startEnergy )return new Color(201, 124, 110);
+        if(energy < 0.8*startEnergy )return new Color(182, 105, 91);
+        if(energy < startEnergy )return new Color(164, 92, 82);
+        if(energy < 2*startEnergy ) return new Color(146, 82, 73);
+        if(energy < 4*startEnergy ) return new Color(128, 72, 64);
+        if(energy < 6*startEnergy )return new Color(119, 67, 59);
+        if(energy < 8*startEnergy )return new Color(88, 50, 44);
+        if(energy < 10*startEnergy )return new Color(74, 42, 37);
+        return new Color(55, 31, 27);
+    }
+
 
 
 }

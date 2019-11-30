@@ -4,6 +4,8 @@ import agh.cs.po.Interfaces.IMapElement;
 import agh.cs.po.EnumClasses.MoveDirection;
 import agh.cs.po.Interfaces.IPositionChangeObserver;
 
+import java.awt.*;
+
 public class Grass implements IMapElement {
 
     protected Vector2d position;
@@ -32,4 +34,6 @@ public class Grass implements IMapElement {
     public String toString(){
         return "*";
     }
+    @Override
+    public Color toColor(){return new Color(67,222, 31); }
 }

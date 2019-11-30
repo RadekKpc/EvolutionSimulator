@@ -3,6 +3,8 @@ package agh.cs.po.Interfaces;
 import agh.cs.po.Classes.Vector2d;
 import agh.cs.po.EnumClasses.MoveDirection;
 
+import java.awt.*;
+
 public interface IMapElement  {
     /**
      * standard 2D position of element
@@ -27,6 +29,8 @@ public interface IMapElement  {
     void move(MoveDirection d);
 
     void addObserver(IPositionChangeObserver observer);
+
+    Color toColor();
 
 
 }
