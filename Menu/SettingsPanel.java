@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SettingsPanel extends JPanel implements ActionListener {
-//
+    //
     public static final int HEIGHT = 600;
     public static final int WIDTH = 600;
     //Fields for data entry
@@ -40,24 +40,24 @@ public class SettingsPanel extends JPanel implements ActionListener {
     private JButton startButton;
 
     public SettingsPanel(Integer[] defaultMapProperties) {
-        setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
         startButton = new JButton("Start Simulation");
         startButton.addActionListener(this);
 
         //LABELS
-        delayLabel                   = new JLabel("Real refresh time (ms):           ");
-        animalsStartEnergyLabel      = new JLabel("Animal start energy:              ");
+        delayLabel = new JLabel("Real refresh time (ms):           ");
+        animalsStartEnergyLabel = new JLabel("Animal start energy:              ");
         copulationMinimumEnergyLabel = new JLabel("Minimum energy to copulation:     ");
-        numOfSpawnedAnimalsLabel     = new JLabel("Animals spawning at the start:    ");
+        numOfSpawnedAnimalsLabel = new JLabel("Animals spawning at the start:    ");
         grassEatingEnergyProfitLabel = new JLabel("Grass energy profit:              ");
-        mapHeightLabel               = new JLabel("Map height:                       ");
-        mapWidthLabel                = new JLabel("Map width:                        ");
-        jungleWidthLabel             = new JLabel("Jungle width:                     ");
-        jungleHeightLabel            = new JLabel("Jungle height:                    ");
-        dayEnergyCostLabel           = new JLabel("Daily energy cost:                ");
-        grassSpawnedInEachDayLabel   = new JLabel("Grass spawned in each day         ");
+        mapHeightLabel = new JLabel("Map height:                       ");
+        mapWidthLabel = new JLabel("Map width:                        ");
+        jungleWidthLabel = new JLabel("Jungle width:                     ");
+        jungleHeightLabel = new JLabel("Jungle height:                    ");
+        dayEnergyCostLabel = new JLabel("Daily energy cost:                ");
+        grassSpawnedInEachDayLabel = new JLabel("Grass spawned in each day         ");
         //TEXT FIELDS
         int a = 10;
         delay = new JTextField();
@@ -182,7 +182,6 @@ public class SettingsPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
 
-
         SteppeJungleMap map = new SteppeJungleMap(
                 Integer.parseInt(mapWidth.getText()),
                 Integer.parseInt(mapHeight.getText()),
@@ -192,9 +191,9 @@ public class SettingsPanel extends JPanel implements ActionListener {
                 Integer.parseInt(dayEnergyCost.getText()),
                 Integer.parseInt(copulationMinimumEnergy.getText()),
                 Integer.parseInt(animalsStartEnergy.getText())
-                );
+        );
         MapSimulation simulation = new MapSimulation(
-                map,Integer.parseInt(delay.getText()),
+                map, Integer.parseInt(delay.getText()),
                 Integer.parseInt(numOfSpawnedAnimals.getText()),
                 Integer.parseInt(grassSpawnedInEachDay.getText()));
         simulation.startSimulation();

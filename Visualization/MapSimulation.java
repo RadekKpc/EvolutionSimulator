@@ -1,10 +1,11 @@
 package agh.cs.po.Visualization;
+
 import agh.cs.po.DarwinWorld.SteppeJungleMap;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 
 public class MapSimulation implements ActionListener {
@@ -22,7 +23,7 @@ public class MapSimulation implements ActionListener {
     public Timer timer;
 
 
-    public MapSimulation(SteppeJungleMap map,int delay,int startNumOfAnimals,int grassSpawnedInEachDay){
+    public MapSimulation(SteppeJungleMap map, int delay, int startNumOfAnimals, int grassSpawnedInEachDay) {
 
         this.map = map;
         this.delay = delay;
@@ -32,25 +33,25 @@ public class MapSimulation implements ActionListener {
         timer = new Timer(delay, this);
 
         frame = new JFrame("Evolution Simulator");
-        frame.setSize(1000,1000);
+        frame.setSize(1000, 1000);
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        renderPanel = new RenderPanel(map,this);
-        renderPanel.setSize(new Dimension(1,1));
+        renderPanel = new RenderPanel(map, this);
+        renderPanel.setSize(new Dimension(1, 1));
 
-        plotRenderPanel = new PlotRenderPanel(map,this);
-        plotRenderPanel.setSize(1,1);
+        plotRenderPanel = new PlotRenderPanel(map, this);
+        plotRenderPanel.setSize(1, 1);
 
         frame.add(renderPanel);
         frame.add(plotRenderPanel);
 
     }
 
-    public void startSimulation(){
+    public void startSimulation() {
 
-        for(int i=0;i<startNumOfAnimals;i++){
+        for (int i = 0; i < startNumOfAnimals; i++) {
             map.addAnimalOnRandomField();
             map.placeAnimalToRandomFieldInJungle();
         }
@@ -69,7 +70,7 @@ public class MapSimulation implements ActionListener {
         map.eating();
         map.nextDay();
         map.copulation();
-        for(int i=0;i<grassSpawnedInEachDay/2;i++){
+        for (int i = 0; i < grassSpawnedInEachDay / 2; i++) {
             map.spawnGrass();
         }
 

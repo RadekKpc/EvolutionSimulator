@@ -10,7 +10,7 @@ public class Grass implements IMapElement {
 
     protected Vector2d position;
 
-    public Vector2d getPosition(){
+    public Vector2d getPosition() {
         return this.position;
     }
 
@@ -20,20 +20,23 @@ public class Grass implements IMapElement {
 
     public boolean isMovable() {
         return false;
-}
+    }
 
 
     public void move(MoveDirection d) {
     }
 
     public void addObserver(IPositionChangeObserver observer) {
-        return ;
+        return;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "*";
     }
+
     @Override
-    public Color toColor(){return new Color(67,222, 31); }
+    public Color toColor() {
+        return new Color(67, 222, 31);
+    }
 }

@@ -30,7 +30,7 @@ public class Vector2d {
     }
 
     public Vector2d upperRight(Vector2d other) {
-        if(other == null) return this;
+        if (other == null) return this;
         int xn = this.x >= other.x ? this.x : other.x;
 
         int yn = this.y >= other.y ? this.y : other.y;
@@ -38,7 +38,7 @@ public class Vector2d {
     }
 
     public Vector2d lowerLeft(Vector2d other) {
-        if(other == null) return this;
+        if (other == null) return this;
         int xn = Math.min(other.x, this.x);
         int yn = Math.min(other.y, this.y);
 

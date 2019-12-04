@@ -3,7 +3,7 @@ package agh.cs.po.EnumClasses;
 import agh.cs.po.Classes.Vector2d;
 
 public enum MapDirection {
-    NORTH, SOUTH, WEST, EAST,NORTHWEST,SOUTHWEST,NORTHEAST,SOUTHEAST;
+    NORTH, SOUTH, WEST, EAST, NORTHWEST, SOUTHWEST, NORTHEAST, SOUTHEAST;
 
     public String toString() {
 
@@ -24,7 +24,7 @@ public enum MapDirection {
                 return "↗";
             case SOUTHEAST:
                 return "↘";
-                //no need for default
+            //no need for default
         }
         return null;
     }
@@ -86,13 +86,13 @@ public enum MapDirection {
             case EAST:
                 return new Vector2d(1, 0);
             case NORTHWEST:
-                return new Vector2d(-1,1);
+                return new Vector2d(-1, 1);
             case SOUTHWEST:
-                return new Vector2d(-1,-1);
+                return new Vector2d(-1, -1);
             case NORTHEAST:
-                return new Vector2d(1,1);
+                return new Vector2d(1, 1);
             case SOUTHEAST:
-                return new Vector2d(1,-1);
+                return new Vector2d(1, -1);
             //no need for default
         }
         return null;

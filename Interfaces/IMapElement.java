@@ -5,7 +5,7 @@ import agh.cs.po.EnumClasses.MoveDirection;
 
 import java.awt.*;
 
-public interface IMapElement  {
+public interface IMapElement {
     /**
      * standard 2D position of element
      * position param should const every class implements IMapElement
@@ -23,8 +23,8 @@ public interface IMapElement  {
 
     /**
      * If element is not movable you should implement empty move function.
-     * @param d to specialize direction to move
      *
+     * @param d to specialize direction to move
      */
     void move(MoveDirection d);
 

@@ -11,11 +11,10 @@ public class World {
 
         try {
 
-            Integer[] defaultMapProperties= {30,30,10,10,15,1,15,40,10,20,4};
+            Integer[] defaultMapProperties = {30, 30, 10, 10, 15, 1, 15, 40, 10, 20, 4};
             SettingsMenu menu = new SettingsMenu(defaultMapProperties);
 
-        }
-        catch(IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             System.out.println(ex);
             return;
         }
