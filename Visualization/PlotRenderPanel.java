@@ -41,7 +41,7 @@ public class PlotRenderPanel extends JPanel {
 
         g.setColor(new Color(0, 0, 0));
 
-        drawVerticalArrow(g, p1.cpx, p1.cpy, p1.cpx, p1.cpy - p1.heigth, "Population of grass and animals");
+        drawVerticalArrow(g, p1.cpx, p1.cpy, p1.cpx, p1.cpy - p1.height, "Population of grass and animals");
         drawHorizontalArrow(g, p1.cpx, p1.cpy, p1.cpx + p1.width, p1.cpy, totalDays, "Day");
 
 
@@ -67,7 +67,7 @@ public class PlotRenderPanel extends JPanel {
             i++;
         }
         double maxY = (double) Collections.max(Arrays.asList(animalPopulationAvg));
-        double scale = p1.heigth / maxY;
+        double scale = p1.height / maxY;
         for (i = 0; i < animalPopulationAvg.length; i++) {
             animalPopulationAvg[i] = (int) (scale * animalPopulationAvg[i]);
         }
@@ -94,7 +94,7 @@ public class PlotRenderPanel extends JPanel {
             i++;
         }
         maxY = (double) Collections.max(Arrays.asList(grassPopulationAvg));
-        scale = p1.heigth / maxY;
+        scale = p1.height / maxY;
         for (i = 0; i < grassPopulationAvg.length; i++) {
             grassPopulationAvg[i] = (int) (scale * grassPopulationAvg[i]);
         }

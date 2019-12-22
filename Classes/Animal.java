@@ -152,7 +152,7 @@ public class Animal implements IMapElement {
         if (energy < 6 * startEnergy) return new Color(119, 67, 59);
         if (energy < 8 * startEnergy) return new Color(88, 50, 44);
         if (energy < 10 * startEnergy) return new Color(74, 42, 37);
-        return new Color(55, 31, 27);
+        return new Color(55, 31, 027);
     }
 
 

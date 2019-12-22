@@ -101,7 +101,7 @@ public class SteppeJungleMap implements IWorldMap, IPositionChangeObserver {
 
     @Override
     public boolean place(IMapElement e) {
-        //we can place maximum 3 animals on one field
+        //we can place maximum 3 animals on one field, to change it, change this code
         Vector2d position = toNoBoundedPosition(e.getPosition());
 
         if (!canPlace(position)) {
@@ -123,7 +123,7 @@ public class SteppeJungleMap implements IWorldMap, IPositionChangeObserver {
         return true;
     }
 
-    // removing from hashMap if you want definitely remove animal you should in addition remove its Observe
+    // removing from hashMap if you want definitely remove animal you should in addition remove its Observer, It is just use to moving animals
     private boolean removeAnimal(Animal a, Vector2d position2) {
         Vector2d position = toNoBoundedPosition(position2);
         LinkedList<Animal> l = animals.get(position);
@@ -140,7 +140,7 @@ public class SteppeJungleMap implements IWorldMap, IPositionChangeObserver {
         return true;
     }
 
-    // adding to hashMap if you want totally add animal you should add its Observer
+    // adding to hashMap if you want totally add animal you should add its Observer, It is just use to moving animals
     private boolean addAnimal(Animal a, Vector2d p) {
         if (a == null) return false;
         Vector2d pos = toNoBoundedPosition(p);
@@ -230,7 +230,7 @@ public class SteppeJungleMap implements IWorldMap, IPositionChangeObserver {
                         if (father.energy >= energyLimitToCopulation) {
                             Animal child = father.copulation(mother);
                             place(child);
-                        }//statistic to end
+                        }
                 }
             }
         }

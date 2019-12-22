@@ -14,7 +14,7 @@ public class Genes {
         this.size = size;
         this.numOfGenes = numOfGenes;
         fillRandom();
-        makeProprietyGen();
+        makeProprielyGen();
     }
 
     public Genes(Genes g) {
@@ -53,7 +53,7 @@ public class Genes {
         }
 
         //REPAIR GENES, THERE IS A CHANCE THAT SOME GENS FROM RANGE AREN'T EXIST IN CHILD GENES
-        makeProprietyGen();
+        makeProprielyGen();
 
     }
 
@@ -77,7 +77,7 @@ public class Genes {
         Arrays.sort(genes);
     }
 
-    private void makeProprietyGen() {
+    private void makeProprielyGen() {
         boolean flag = true;
         while (flag) {
             flag = false;

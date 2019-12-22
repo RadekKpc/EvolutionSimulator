@@ -60,7 +60,7 @@ public class MapSimulation implements ActionListener {
     }
 
     @Override
-    //It will executed when timer finish Counted
+    //It will executed when timer finished counting
     public void actionPerformed(ActionEvent e) {
         plotRenderPanel.repaint();
         renderPanel.repaint();

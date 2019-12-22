@@ -1,0 +1,14 @@
+{
+  "mapWidth": 30,
+  "mapHeight": 30,
+  "jungleWidth": 10,
+  "jungleHeight": 10,
+  "grassEatingEnergyProfit": 15,
+  "dayEnergyCost": 1,
+  "copulationMinimumEnergy": 15,
+  "animalsStartEnergy": 40,
+  "numOfSpawnedAnimals": 10,
+  "delay": 10,
+  "grassSpawnedInEachDay": 4
+
+}
